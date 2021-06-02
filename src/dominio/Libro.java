@@ -3,6 +3,7 @@ package dominio;
 public class Libro extends Producto implements Vendible{
 	private String autor;
 	private String editorial;
+	private Double precioDeVenta;
 	public Libro(Integer codigo, String descripcion, String autor, String editorial) {
 		super(codigo, descripcion);
 		this.autor= autor;
@@ -20,10 +21,15 @@ public class Libro extends Producto implements Vendible{
 	public void setEditorial(String editorial) {
 		this.editorial = editorial;
 	}
-	public Double precioDeVenta() {
-		// TODO Auto-generated method stub
-		return null;
+	public Double setPrecioDeVenta(Double precioDeVenta) {
+		return this.precioDeVenta = precioDeVenta;
 	}
+	public Double getPrecioDeVenta() {
+		return precioDeVenta;
+	}
+	
+	
+	
 	
 	
 	

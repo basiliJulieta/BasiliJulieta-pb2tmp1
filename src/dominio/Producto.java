@@ -4,6 +4,7 @@ public class Producto {
 	
 	private Integer codigo;
 	private String descripcion;
+	private Estado estado;
 	public Producto(Integer codigo, String descripcion) {
 		super();
 		this.codigo = codigo;
@@ -20,6 +21,10 @@ public class Producto {
 	}
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
+	}
+	
+	public Estado getEstadoActual() {
+		return this.estado;
 	}
 	
 	

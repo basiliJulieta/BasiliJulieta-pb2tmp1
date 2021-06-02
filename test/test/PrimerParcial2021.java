@@ -5,12 +5,17 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import dominio.Actor;
+import dominio.Alquilable;
+import dominio.Cliente;
 import dominio.Comestible;
+import dominio.Estado;
 import dominio.Genero;
 import dominio.Libro;
 import dominio.Pelicula;
+import dominio.Producto;
 import dominio.TipoDeConsola;
 import dominio.Vendible;
+import dominio.Videoclub;
 import dominio.Videojuego;
 
 
@@ -103,10 +108,10 @@ public class PrimerParcial2021 {
 		
 		// Ejecución
 		Vendible pelicula = new Pelicula(CODIGO_ESPERADO, DESCRIPCION_ESPERADA, GENERO_ESPERADO, ANO_DE_ESTRENO_ESPERADO, DIRECTOR_ESPERADO);
-		pelicula.setPrecioVenta(PRECIO_VENTA);
+		pelicula.setPrecioDeVenta(PRECIO_VENTA);
 		
 		// Validación
-		assertEquals(PRECIO_VENTA, pelicula.getPrecioVenta());		
+		assertEquals(PRECIO_VENTA, pelicula.getPrecioDeVenta());		
 	}
 
 	@Test
@@ -138,7 +143,7 @@ public class PrimerParcial2021 {
 		Cliente nuevoCliente = new Cliente(CODIGO_ESPERADO, APELLIDO_ESPERADO, NOMBRE_ESPERADO, EDAD_ESPERADA);
 		
 		// Validación
-		assertEquals(CODIGO_ESPERADO, nuevoCliente.getCodigo());
+		assertEquals(CODIGO_ESPERADO, nuevoCliente.getCodigoDeCliente());
 		assertEquals(NOMBRE_ESPERADO, nuevoCliente.getNombre());
 		assertEquals(APELLIDO_ESPERADO, nuevoCliente.getApellido());
 		assertEquals(EDAD_ESPERADA, nuevoCliente.getEdad());

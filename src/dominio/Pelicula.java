@@ -3,14 +3,15 @@ package dominio;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Pelicula extends Producto implements Vendible {
+public class Pelicula extends Producto implements Vendible, Alquilable {
 	
 	private Genero genero; 
 	private Integer anioDeEstreno;
 	private String director;
 	private String actoresPrincipales;
 	private List <Actor> actores = new ArrayList<Actor>();
-
+	private Double precioDeVenta;
+	private Double precioAlquiler;
 
 	public Pelicula(Integer codigo, String descripcion, Genero genero,Integer anioDeEstreno, String director) {
 		super(codigo, descripcion);
@@ -68,16 +69,33 @@ public class Pelicula extends Producto implements Vendible {
 
 
 	public Boolean actua(Actor nombreActor) {
-		
-//		return this.actores.;
+		if(this.actores.contains(nombreActor)){
+			return true;
+		}
+			return false;
 	}
 
 
-	public Double precioDeVenta() {
-		// TODO Auto-generated method stub
-		return null;
+	public Double setPrecioDeVenta(Double precioDeVenta) {
+		return this.precioDeVenta=precioDeVenta;
 	}
-	
+
+
+	public Double getPrecioDeVenta() {
+		return this.precioDeVenta;
+	}
+
+
+	public Double getPrecioAlquiler() {
+		return this.precioAlquiler;
+	}
+
+
+	public Double setPrecioAlquiler(Double precioAlquiler) {
+		return this.precioAlquiler= precioAlquiler;
+	}
+
+
 	
 	
 	

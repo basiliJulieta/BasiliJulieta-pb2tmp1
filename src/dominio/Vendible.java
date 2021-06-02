@@ -1,5 +1,6 @@
 package dominio;
 
 public interface Vendible {
-	public Double precioDeVenta()
+	public abstract Double setPrecioDeVenta(Double precioDeVenta);
+	public abstract Double getPrecioDeVenta();
 }
