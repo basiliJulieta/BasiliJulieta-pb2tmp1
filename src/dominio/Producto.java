@@ -26,6 +26,10 @@ public class Producto {
 	public Estado getEstadoActual() {
 		return this.estado;
 	}
+//	public Actor getQuienPoseeElProducto() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 	
 	
 	

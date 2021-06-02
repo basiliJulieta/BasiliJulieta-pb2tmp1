@@ -151,7 +151,7 @@ public class PrimerParcial2021 {
 	}
 
 	@Test
-	void queSePuedaVenderUnLibro() {
+	public void queSePuedaVenderUnLibro() {
 		// Preparación
 		final Integer CODIGO_ESPERADO = 1;
 		final String DESCRIPCION_ESPERADA = "Fifty Shades of Grey";
@@ -174,13 +174,13 @@ public class PrimerParcial2021 {
 		
 		// Validación
 		assertEquals(ESTADO_INICIAL_ESPERADO, video.buscarProducto(nuevoProducto).getEstadoActual());
-		assertTrue(video.vender(nuevoProducto, nuevoCliente));
+		assertTrue(video.vender((Vendible) nuevoProducto, nuevoCliente));
 		assertEquals(NOMBRE_ESPERADO, video.buscarProducto(nuevoProducto).getQuienPoseeElProducto().getNombre());
 		assertEquals(ESTADO_FINAL_ESPERADO, video.buscarProducto(nuevoProducto).getEstadoActual());
 	}
 	
 	@Test
-	void queSePuedaAlquilarUnaPelicula() {
+	public void queSePuedaAlquilarUnaPelicula() {
 		// Preparación
 		final Integer CODIGO_ESPERADO = 1;
 		final String DESCRIPCION_ESPERADA = "El Cisne Negro";
@@ -198,14 +198,14 @@ public class PrimerParcial2021 {
 		
 		// Ejecución
 		Videoclub video = new Videoclub(NOMBRE_VIDEOCLUB);
-		Producto nuevoProducto = new Pelicula(CODIGO_ESPERADO, DESCRIPCION_ESPERADA, GENERO_ESPERADO, ANO_DE_ESTRENO_ESPERADO, DIRECTOR_ESPERADO);
+		Vendible nuevoProducto = new Pelicula(CODIGO_ESPERADO, DESCRIPCION_ESPERADA, GENERO_ESPERADO, ANO_DE_ESTRENO_ESPERADO, DIRECTOR_ESPERADO);
 		Cliente nuevoCliente = new Cliente(CODIGO_ESPERADO, APELLIDO_ESPERADO, NOMBRE_ESPERADO, EDAD_ESPERADA);		
 		
-		video.agregarProducto(nuevoProducto);
+		video.agregarProducto((Producto) nuevoProducto);
 		
 		// Validación
 		assertEquals(ESTADO_INICIAL_ESPERADO, video.buscarProducto(nuevoProducto).getEstadoActual());
-		assertTrue(video.alquilar(nuevoProducto, nuevoCliente));
+		assertTrue(video.alquilar((Alquilable) nuevoProducto, nuevoCliente));
 		assertEquals(NOMBRE_ESPERADO, video.buscarProducto(nuevoProducto).getQuienPoseeElProducto().getNombre());
 		assertEquals(ESTADO_FINAL_ESPERADO, video.buscarProducto(nuevoProducto).getEstadoActual());
 	}
