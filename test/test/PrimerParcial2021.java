@@ -206,7 +206,7 @@ public class PrimerParcial2021 {
 		// Validación
 		assertEquals(ESTADO_INICIAL_ESPERADO, video.buscarProducto(nuevoProducto).getEstadoActual());
 		assertTrue(video.alquilar((Alquilable) nuevoProducto, nuevoCliente));
-		assertEquals(NOMBRE_ESPERADO, video.buscarProducto(nuevoProducto).getQuienPoseeElProducto().getNombre());
+		assertEquals(NOMBRE_ESPERADO, ( video.buscarProducto(nuevoProducto)).getQuienPoseeElProducto().getNombre());
 		assertEquals(ESTADO_FINAL_ESPERADO, video.buscarProducto(nuevoProducto).getEstadoActual());
 	}
 	
